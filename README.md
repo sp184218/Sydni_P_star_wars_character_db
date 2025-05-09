@@ -22,6 +22,8 @@ This project demonstrates how to:
 - 🔇 **Mute Toggle** – Click the video or press spacebar to mute/unmute audio (ignores typing inputs).
 - 🎨 **Stylized Buttons** – Custom button colors and effects, styled with the Star Wars theme.
 - 📁 **Character Info** – Dynamically loaded and displayed Star Wars characters from the API.
+- 🚀 Automatic Crawl Fade-Out – After 40 seconds, the crawl overlay fades out smoothly, providing a seamless transition to the main content.
+- 🛸 Improved Modal Interaction – The intro modal now closes automatically after the crawl finishes, with smooth fade-out effects.
 
 ## 🚀 Tech Stack
 
