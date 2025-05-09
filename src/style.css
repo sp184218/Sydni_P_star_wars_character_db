@@ -212,10 +212,10 @@ button:active,
 input:hover,
 input:focus,
 input:active {
-  cursor: url('pngimg.com\ -\ lightsaber_PNG9.png') 16 16, auto !important;
+  cursor: url('lightsaber.png') 16 16, auto !important;
 }
 
 /* Optional: also override for clickable links */
-a:hover {
-  cursor: url('pngimg.com\ -\ lightsaber_PNG9.png') 16 16, auto !important;
+a:hover  {
+  cursor: url('lightsaber.png') 16 16, auto !important;
 }
