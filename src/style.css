@@ -1,0 +1,221 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  background-color: #333;
+}
+
+.search-container input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  color: white;
+  background-color: transparent;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #ffe81f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #bd3c04;
+  text-shadow: 0 0 5px #ffe81f, 0 0 10px #ffe81f; /* Glowing effect */
+}
+
+.search-container button:active {
+  background-color: #ff591f;
+  text-shadow: 0 0 10px #ffe81f, 0 0 15px #ffe81f;
+}
+
+/* Results container */
+.results-wrapper {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+/* Character list */
+.characters {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.characters > li {
+  flex: 1 1 calc(33.333% - 20px);
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.characters > li a {
+  display: block;
+  color: #ffe81f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.characters > li a:hover {
+  color: white;
+  text-shadow: 0 0 5px #ffe81f, 0 0 10px #ffe81f;
+}
+
+/* Pagination controls */
+#pagination-controls {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#prev-button,
+#next-button {
+  background-color: #d4d412;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Adjust Next button's position */
+#next-button {
+  margin-left: 460px; /* Push the 'Next' button further to the right */
+}
+
+/* Hover effect for pagination buttons */
+#prev-button:hover,
+#next-button:hover {
+  background-color: #bd3c04;
+  text-shadow: 0 0 5px #ffe81f, 0 0 10px #ffe81f;
+  font-weight: bold;
+}
+
+/* Active state for buttons */
+#prev-button:active,
+#next-button:active {
+  background-color: #ff591f;
+  text-shadow: 0 0 10px #ffe81f, 0 0 15px #ffe81f;
+}
+
+button:disabled {
+  background-color: #d4d412;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Dialog box styles */
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-content {
+  background-color: #111;
+  padding: 20px;
+  border: 1px solid #ff1f1f;
+  border-radius: 10px;
+  max-width: 400px;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #ff391fdc;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .characters > li {
+    flex: 1 1 100%;
+  }
+}
+
+/* Default: Baby Yoda cursor everywhere */
+* {
+  cursor: url('baby-yoda-so-cute.gif') 16 16, auto !important;
+}
+
+/* Override on hover/focus/active states for interactivity */
+button:hover,
+button:focus,
+button:active,
+input:hover,
+input:focus,
+input:active {
+  cursor: url('pngimg.com\ -\ lightsaber_PNG9.png') 16 16, auto !important;
+}
+
+/* Optional: also override for clickable links */
+a:hover {
+  cursor: url('pngimg.com\ -\ lightsaber_PNG9.png') 16 16, auto !important;
+}

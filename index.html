@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Character DB</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Search Container -->
+    <div class="search-container">
+      <input type="text" id="search-input" class="search-input" placeholder="Search..." />
+      <button class="search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Character Results Section -->
+    <div class="results-wrapper">
+      <ul class="characters" id="results">
+        <!-- Character items will be dynamically inserted here -->
+      </ul>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div id="pagination-controls"></div>
+
+    <!-- Character Dialog (Popup) -->
+    <div id="character-dialog" class="dialog hidden">
+      <div class="dialog-content">
+        <span id="close-dialog" class="close">&times;</span>
+        <div id="dialog-body"></div>
+      </div>
+    </div>    
+
+    <!-- Background Video -->
+    <video autoplay loop id="background-video">
+      <source src="star wars.mp4" type="video/mp4">
+    </video>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+  const video = document.getElementById('background-video');
+
+  // Click toggles mute
+  video.addEventListener('click', () => {
+    video.muted = !video.muted;
+  });
+
+  // Spacebar toggles mute (ignore if typing in input)
+  document.addEventListener('keydown', (e) => {
+    const isTyping = document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA';
+    if (e.code === 'Space' && !isTyping) {
+      e.preventDefault(); // Prevent scrolling
+      video.muted = !video.muted;
+    }
+  });
+</script>
+
+  </body>
+</html>
