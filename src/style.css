@@ -219,3 +219,101 @@ input:active {
 a:hover  {
   cursor: url('lightsaber.png') 16 16, auto !important;
 }
+
+.crawl-container {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  color: #ffe81f;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.fade {
+  position: absolute;
+  top: 0;
+  bottom: 60%;
+  width: 100%;
+  background-image: linear-gradient(to top, transparent, black 80%);
+  z-index: 2;
+}
+
+.star-wars {
+  position: relative;
+  height: 100%;
+  perspective: 400px;
+}
+
+.crawl {
+  position: absolute;
+  top: 100%;
+  left: -40%;
+  transform-origin: 50% 100%;
+  transform: rotateX(25deg) translateX(-100px); /* shift left */
+  animation: crawl 60s linear forwards;
+}
+
+
+.crawl .title {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.crawl h1 {
+  font-size: 200px;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.crawl p {
+  font-size: 50px;  /* same as h1 */
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffe81f;
+}
+
+
+.crawl-overlay {
+  transition: opacity 2s ease-out, visibility 0s linear 10s; /* Smooth fade out */
+  opacity: 1;
+  visibility: visible; /* Keeps it visible until transition is complete */
+}
+
+.crawl-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden; /* Hide after fade completes */
+  pointer-events: none; /* Allow clicks and interactions to pass through */
+}
+
+/* Optional: For UI adjustment after crawl fades */
+.ui-wrapper.ready {
+  filter: none;  /* Example: remove any blur or other effects */
+  transition: all 1s ease;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: 100%;
+    transform: rotateX(25deg) translateZ(0);
+  }
+  100% {
+    top: -200%;
+    transform: rotateX(25deg) translateZ(-1000px);
+  }
+}

@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
+    <div id="intro-modal" class="crawl-container">
+  <div class="fade"></div>
+  <section class="star-wars">
+    <div class="crawl">
+      <div class="title">
+        <p>🌌 Sydematic Presents</p>
+        <h1>Star Wars Character DB</h1>
+      </div>
+      <br><p>Welcome to a galaxy of interactivity!</p>
+      <br><p>This began as a humble search bar assignment... but naturally, I went full Jedi and launched it into hyperspace.</p>
+      <br><p>Connect with live APIs. Search real-time. Explore over 100+ characters dynamically rendered in a stylized interface. And yes, there's a Baby Yoda and Green Lightsaber cursor.</p>
+      <br><p>Click anywhere or press the spacebar to begin your journey or you can just sit there looking at the words until it fades away lol...</p>
+     <br> <p>Built by Sydni Poteat — National Security student by day, Code Padawan by night. One with the Force... and the DOM.</p>
+    </div>
+  </section>
+</div>
     <!-- Search Container -->
     <div class="search-container">
       <input type="text" id="search-input" class="search-input" placeholder="Search..." />
@@ -40,7 +56,7 @@
     </div>    
 
     <!-- Background Video -->
-    <video autoplay loop id="background-video">
+ <video id="background-video" autoplay loop playsinline>
       <source src="star wars.mp4" type="video/mp4">
     </video>
 
@@ -48,20 +64,17 @@
     <script>
   const video = document.getElementById('background-video');
 
-  // Click toggles mute
-  video.addEventListener('click', () => {
-    video.muted = !video.muted;
-  });
+  // ✅ Remove click toggle — no longer needed or wanted
 
-  // Spacebar toggles mute (ignore if typing in input)
+  // ✅ Spacebar toggles mute (ignore if typing in input)
   document.addEventListener('keydown', (e) => {
     const isTyping = document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA';
     if (e.code === 'Space' && !isTyping) {
-      e.preventDefault(); // Prevent scrolling
+      e.preventDefault(); // Prevent page from scrolling
       video.muted = !video.muted;
     }
   });
 </script>
-
+<script type="module" src="/src/main.js"></script>
   </body>
 </html>
